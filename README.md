@@ -2,6 +2,8 @@
 
 A meaningful and interactive Binary Search Tree (BST) visualization tool inspired by VisualGo. This application helps students and developers understand BST operations through step-by-step animations and detailed algorithmic explanations.
 
+[**Live Demo**](https://bst-visualizer-pi.vercel.app/)
+
 ## Features
 
 - **Standard BST Operations**:
