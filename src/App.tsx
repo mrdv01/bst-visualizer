@@ -448,7 +448,7 @@ function App() {
         showToast(`Value ${value} not found`, 'error');
       }
       
-      showMessage(result.message);
+
       
       const msg = result.success 
         ? `Removing value ${value}` 

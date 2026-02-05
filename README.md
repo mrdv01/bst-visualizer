@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# BST Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A meaningful and interactive Binary Search Tree (BST) visualization tool inspired by VisualGo. This application helps students and developers understand BST operations through step-by-step animations and detailed algorithmic explanations.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Standard BST Operations**:
+  - **Insert**: Add nodes with animation showing the insertion path.
+  - **Search**: Visualize the search logic with comparison feedback.
+  - **Remove**: Handle leaf, single-child, and two-child deletion cases.
+  - **Find Min/Max**: Traverse to the leftmost or rightmost nodes.
 
-## React Compiler
+- **Tree Traversals**:
+  - **Inorder**: Left -> Root -> Right
+  - **Preorder**: Root -> Left -> Right
+  - **Postorder**: Left -> Right -> Root
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Playback Controls** (VisualGo Style):
+  - Play / Pause animations.
+  - Step Forward / Step Backward through operations.
+  - Adjustable playback speed.
+  - Progress bar.
 
-## Expanding the ESLint configuration
+- **Interactive UI**:
+  - **Info Panel**: Bottom-right collapsible panel displaying operation status, detailed pseudocode, and algorithm explanations (color-coded).
+  - **Responsive Canvas**: Pan and zoom (future enhancement) ready structure.
+  - **Preset Trees**: Quickly generate Perfect, Random, or Skewed trees for testing.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React**: Component-based UI structure.
+- **Vite**: Fast build tool and dev server.
+- **TypeScript**: Type safety for data structures and components.
+- **Tailwind CSS**: Modern utility-first styling.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2.  **Start the development server**:
+    ```bash
+    npm run dev
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3.  **Build for production**:
+    ```bash
+    npm run build
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Usage
+
+1.  Use the **Control Panel** on the left to select an operation.
+2.  Input a value (e.g., `50`) and click the corresponding button (e.g., **Insert**).
+3.  Watch the animation on the main canvas.
+4.  Use the **Playback Controls** (bottom center) to pause or step through the animation.
+5.  View the **Info Panel** (bottom right) for algorithmic details and pseudocode.
